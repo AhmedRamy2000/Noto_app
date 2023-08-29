@@ -14,7 +14,6 @@ class NoteItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          
           ListTile(
             title: const Text(
               'First Tip',
@@ -24,9 +23,9 @@ class NoteItem extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             ),
             subtitle: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
+              padding: EdgeInsets.symmetric(vertical: 12),
               child: Text('Be happy with who you are',
-                  style: TextStyle(color: Colors.black54, fontSize: 20)),
+                  style: TextStyle(color: Colors.black54, fontSize: 18)),
             ),
             trailing: IconButton(
                 onPressed: () {},
@@ -36,7 +35,6 @@ class NoteItem extends StatelessWidget {
                   size: 25,
                 )),
           ),
-          
           const Padding(
             padding: EdgeInsets.only(right: 16),
             child: Text(
