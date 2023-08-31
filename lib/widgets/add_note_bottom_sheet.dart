@@ -19,9 +19,17 @@ class AddNoteBottomSheet extends StatelessWidget {
         },
         builder: (context, state) {
           return AbsorbPointer(
-            absorbing: state is AddNoteCubitLoading ? true : false,//stop control in screen while loading data
+            absorbing: state is AddNoteCubitLoading
+                ? true
+                : false, //stop control in screen while loading data
             child: ModalProgressHUD(
-                child: addNoteForm(),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: 16,
+                      right: 16,
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
+                  child: addNoteForm(),
+                ),
                 inAsyncCall: state is AddNoteCubitLoading ? true : false),
           );
         },
