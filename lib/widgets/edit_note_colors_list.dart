@@ -5,6 +5,7 @@ import 'package:notesapp/widgets/colorItem.dart';
 
 class EditNoteColorsList extends StatefulWidget {
   EditNoteColorsList({super.key, required this.note});
+
   NoteModel note;
   @override
   State<EditNoteColorsList> createState() => _EditNoteColorsListState();
@@ -13,10 +14,11 @@ class EditNoteColorsList extends StatefulWidget {
 class _EditNoteColorsListState extends State<EditNoteColorsList> {
   late int currentIndex;
   @override
-  void initState(){
+  void initState() {
     currentIndex = kColors.indexOf(Color(widget.note.color));
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
