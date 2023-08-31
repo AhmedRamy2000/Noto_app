@@ -18,7 +18,7 @@ class AddNoteBottomSheet extends StatelessWidget {
           } else if (state is AddNoteCubitFailure) {}
         },
         builder: (context, state) {
-          return ModalProgressHUD(
+          return  ModalProgressHUD(
               child: addNoteForm(),
               inAsyncCall: state is AddNoteCubitLoading ? true : false);
         },
