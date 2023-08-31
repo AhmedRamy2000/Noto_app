@@ -9,13 +9,10 @@ part 'read_note_state.dart';
 
 class ReadNoteCubit extends Cubit<ReadNoteState> {
   ReadNoteCubit() : super(ReadNoteInitial());
-  fetchAllNotes() async {
-    emit(ReadNoteLoading());
-    try {
-      var notesBox = Hive.box<NoteModel>(kNotesBox);
-      emit(ReadNoteSuccess(notesBox.values.toList()));
-    } catch (ex) {
-      emit(ReadNoteFailure(ex.toString()));
-    }
+  List<NoteModel>? notes;
+  fetchAllNotes(){
+    var notesBox = Hive.box<NoteModel>(kNotesBox);
+    notes = notesBox.values.toList();
+    
   }
 }
