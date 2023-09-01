@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:notesapp/constants.dart';
 
 class CustonTextField extends StatelessWidget {
-  const CustonTextField({super.key, this.onchange,required this.hint,this.maxLines =1,this.onSaved});
+  const CustonTextField(
+      {super.key,
+      this.onchange,
+      required this.hint,
+      this.maxLines = 1,
+      this.onSaved,
+      this.contentIcon = false});
   final String hint;
   final int maxLines;
+  final bool contentIcon;
   final void Function(String?)? onSaved;
   final void Function(String?)? onchange;
 
@@ -13,14 +20,16 @@ class CustonTextField extends StatelessWidget {
     return TextFormField(
       onSaved: onSaved,
       onChanged: onchange,
-      validator: (value){
-        if(value?.isEmpty  ?? true){
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
           return 'field is required';
-        }else return null;
+        } else
+          return null;
       },
       cursorColor: kPrimaryColor,
       maxLines: maxLines,
       decoration: InputDecoration(
+        prefixIcon: contentIcon ? Icon(Icons.search,color: kForntColorDark,) : null,
         hintText: hint,
         hintStyle: const TextStyle(color: kPrimaryColor),
         border: buildBorder(),

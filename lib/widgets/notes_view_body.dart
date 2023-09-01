@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notesapp/cubits/cubit/read_note_cubit.dart';
 import 'package:notesapp/models/notes_model.dart';
+
 import 'package:notesapp/widgets/custom_app_bar.dart';
 import 'package:notesapp/widgets/notes_list_view.dart';
 
@@ -28,10 +29,11 @@ class _NotesViewBodyState extends State<NotesViewBody> {
           const SizedBox(height: 50),
           CustomAppBar(
             title: 'Notes',
-            icon: Icons.search,
-            onPressed: () {
-              // to do
-            },
+            // onPressed: () {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return SearchNoteView();
+            //   }));
+            // },
           ),
           const Expanded(child: NotesListView()),
         ],

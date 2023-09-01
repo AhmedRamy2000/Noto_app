@@ -6,6 +6,7 @@ import 'package:notesapp/models/notes_model.dart';
 import 'package:notesapp/widgets/custom_app_bar.dart';
 
 import 'package:notesapp/widgets/custom_text_field.dart';
+import 'package:notesapp/widgets/edit_custom_app_bar.dart';
 import 'package:notesapp/widgets/edit_note_colors_list.dart';
 
 class EditViewBody extends StatefulWidget {
@@ -25,7 +26,7 @@ class _EditViewBodyState extends State<EditViewBody> {
       child: Column(
         children: [
           const SizedBox(height: 50),
-          CustomAppBar(
+          EditCustomAppBar(
             onPressed: () {
               widget.note.title = title ?? widget.note.title;
               widget.note.subtitle = subtitle ?? widget.note.subtitle;
@@ -34,7 +35,7 @@ class _EditViewBodyState extends State<EditViewBody> {
               Navigator.pop(context);
             },
             title: 'Edit note',
-            icon: Icons.check,
+            
           ),
           const SizedBox(height: 32),
           CustonTextField(
